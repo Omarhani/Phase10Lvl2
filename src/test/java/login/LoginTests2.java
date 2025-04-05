@@ -8,17 +8,17 @@ import java.io.FileNotFoundException;
 
 import static reader.ReadDataFromJson.dataModel;
 
-public class LoginTests extends BaseTests {
+public class LoginTests2 extends BaseTests {
 
 
     @Test
-    public void t1() throws FileNotFoundException {
+    public void t3() throws FileNotFoundException {
         LoginPage loginPage = homePage.clickOnSignUpAndLoginButton();
         loginPage.insertEmail(dataModel().Login.ValidCreditials.Username);
     }
 
     @Test
-    public void t2() throws FileNotFoundException {
+    public void t4() throws FileNotFoundException {
         LoginPage loginPage = homePage.clickOnSignUpAndLoginButton();
         loginPage.insertEmail(dataModel().Login.ValidCreditials.Username);
     }
