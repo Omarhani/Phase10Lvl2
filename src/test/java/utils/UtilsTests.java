@@ -3,6 +3,8 @@ package utils;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
@@ -15,12 +17,13 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
+import static utils.MethodHandles.extent;
+import static utils.MethodHandles.test;
+
 public class UtilsTests {
 
     WebDriver driver;
-    static ExtentReports extent;
 
-    static ExtentTest test;
 
     public UtilsTests(WebDriver driver) {
         this.driver = driver;
@@ -39,13 +42,17 @@ public class UtilsTests {
         extent.attachReporter(spark);
     }
 
+    public void createTestCaseInReport(Method method){
+        test = extent.createTest(method.getName());
+        test.info(MarkupHelper.createLabel("----------------- Steps To Reproduce -----------------", ExtentColor.TEAL));
+    }
 
     public void setStatus(Method method, ITestResult result) {
-        test = extent.createTest(method.getName());
         if (result.getStatus() == ITestResult.SUCCESS) {
-            test.pass("Test Pass");
+            test.pass(MarkupHelper.createLabel("Test Pass", ExtentColor.GREEN));
         } else if (result.getStatus() == ITestResult.FAILURE) {
-            test.fail("Test Fail");
+            test.fail(MarkupHelper.createLabel("Test Failed", ExtentColor.RED));
+
         }
         addAttachment(method);
     }
