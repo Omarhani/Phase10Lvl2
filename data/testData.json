@@ -1,42 +1,19 @@
 {
-  "URL": "https://automationexercise.com/",
+  "URL": "",
   "Login":{
     "ValidCreditials": {
-      "Username": "omar",
-      "Password": "123"
+      "Username": "",
+      "Password": ""
     },
     "InvalidCreditials": {
       "InvalidUsername": {
-        "Username": "ahmed",
-        "Password": "456"
+        "Username": "",
+        "Password": ""
       },
       "InvalidPassword": {
-        "Username": "mo",
-        "Password": "789"
+        "Username": "",
+        "Password": ""
       }
     }
-  },
-  "Login1": [
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"],
-    ["omar","123"],
-    ["ahmed","456"],
-    ["mohamed","789"]
-  ]
+  }
 }

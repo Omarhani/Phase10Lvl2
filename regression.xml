@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Test Suite" >
-    <test name="Chrome" parallel="classes" >
+<suite name="Regression Test Suite">
+    <test name="Chrome">
         <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests3"/>
-            <class name="login.LoginTests2">
-                <methods>
-                    <include name="t4"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
 
-    <test name="FireFox" parallel="classes" >
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests2"/>
-            <class name="login.LoginTests3">
-                <methods>
-                    <exclude name="t6"/>
-                </methods>
-            </class>
-        </classes>
     </test>
 </suite>
