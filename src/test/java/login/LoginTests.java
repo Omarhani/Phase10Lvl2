@@ -11,7 +11,7 @@ import static reader.ReadDataFromJson.dataModel;
 public class LoginTests extends BaseTests {
 
 
-    @Test(priority = 1)
+    @Test
     public void loginUserWithCorrectEmailAndPassword() throws FileNotFoundException {
         LoginPage loginPage =homePage.clickOnSignUpAndLoginButton();
         loginPage.insertLoginEmail(dataModel().Login.ValidCreditials.Email);
@@ -22,7 +22,7 @@ public class LoginTests extends BaseTests {
 
     }
 
-    @Test(priority = 2)
+    @Test
     public void loginUserWithCorrectEmailAndInCorrectPassword() throws FileNotFoundException {
         LoginPage loginPage =homePage.clickOnSignUpAndLoginButton();
         loginPage.insertLoginEmail(dataModel().Login.InvalidCreditials.InvalidPassword.Email);
