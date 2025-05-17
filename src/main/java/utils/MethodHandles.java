@@ -31,7 +31,7 @@ public class MethodHandles {
         this.driver = driver;
     }
 
-    private WebElement webElement(By locator) {
+    protected WebElement webElement(By locator) {
         return driver.findElement(locator);
     }
 
@@ -49,9 +49,9 @@ public class MethodHandles {
         for (int i = 0; i < 5; i++) {
             try {
                 explicitWait(time, locator);
+                addBorderToElement(driver, webElement(locator));
                 webElement(locator).click();
                 setSteps();
-                addBorderToElement(driver, webElement(locator));
                 break;
             } catch (StaleElementReferenceException e) {
 
