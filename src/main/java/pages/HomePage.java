@@ -10,11 +10,14 @@ public class HomePage extends MethodHandles {
         super(driver);
     }
 
+
     //locators
     private final By signUpAndLogin = By.linkText("Signup / Login");
     private final By homeLink = By.xpath("//a[contains(., 'Home')]");
     private final By loginUser  = By.tagName("b");
     private final By logOut = By.linkText("Logout");
+    private final By signUpLogin = By.linkText("Signup / Login");
+    private final By homePageAssertion = By.xpath("(//h2[@class='title text-center'])[1]");
 
     //methods
     public void verifyHomeLinkIsOrange(String homeColor) {
@@ -41,4 +44,19 @@ public class HomePage extends MethodHandles {
     {
         myAssertEquals(getUserName(),userName);
     }
+
+
+    
+
+    public LoginPage clickOnSignUpLoginButton() {
+
+        click(signUpLogin, 30);
+        return new LoginPage(driver);
+    }
+
+    public String getHomePageMsg() {
+        return driver.findElement(homePageAssertion).getText();
+
+    }
 }
+
