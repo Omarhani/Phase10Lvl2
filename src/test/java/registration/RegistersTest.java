@@ -1,11 +1,11 @@
-package RegisterUserWithExistingEmail;
+package registration;
 
 import base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 
-public class registerUserWithExistingEmailTest extends BaseTests {
+public class RegistersTest extends BaseTests {
 
     @Test
     public void testRegistrationWithExistingEmail() {
