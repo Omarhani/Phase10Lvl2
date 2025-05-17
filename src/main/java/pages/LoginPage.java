@@ -14,7 +14,7 @@ public class LoginPage extends MethodHandles {
     private final By name = By.xpath("//input[@name='name']");
     private final By email = By.xpath("(//input[@name='email'])[2]");
     private final By emailExistingText = By.xpath("//div[@class='signup-form']//p[text()='Email Address already exist!']");
-
+    private final By signUpButton =By.xpath("(//button[@class='btn btn-default'])[2]");
 
     public String getSignUpText() {
         return driver.findElement(signUpText).getText();
@@ -28,9 +28,12 @@ public class LoginPage extends MethodHandles {
     public void insertExistingEmail(String ExistingEmail) {
         sendKeys(email, 30, ExistingEmail);
     }
-        public String getEmailExistingText() {
-            isDisplayed(emailExistingText,100);
-            return   getText(emailExistingText, 100);
+
+
+        public String getEmailExistingText()  {
+            click(signUpButton,30);
+            isDisplayed(emailExistingText,30);
+            return   getText(emailExistingText, 30);
         }
 
     }
