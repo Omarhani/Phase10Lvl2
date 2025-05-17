@@ -16,11 +16,9 @@ public class LoginPage extends MethodHandles {
     private final By emailOrPasswordIsIncorrectMSG = By.xpath("//p[contains(text(),\"Your email or password is incorrect!\")]");
 
     //Methods
-    public void insertLoginEmail(String text){
-        sendKeys(loginEmail, 10,text);
-    }
-    public void insertLoginPassword(String passwordText)
+    public void insertLoginCreditial(String mailText,String passwordText)
     {
+        sendKeys(loginEmail, 10,mailText);
         sendKeys(password,10,passwordText);
     }
     public HomePage clickOnLoginButtonAndSuccess()
@@ -28,6 +26,7 @@ public class LoginPage extends MethodHandles {
         click(loginButton,5);
         return new HomePage(driver);
     }
+
     public void clickOnLoginButtonAndFail()
     {
         click(loginButton,5);
