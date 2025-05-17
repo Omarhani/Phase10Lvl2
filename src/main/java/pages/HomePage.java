@@ -18,9 +18,9 @@ public class HomePage extends MethodHandles {
 
     //methods
     public void verifyHomeLinkIsOrange(String homeColor) {
-        WebElement homeElement = driver.findElement(homeLink);
+        WebElement homeElement = webElement(homeLink); // Replaces driver.findElement(homeLink)
         String color = homeElement.getCssValue("color");
-        myAssertEquals(color,homeColor);
+        myAssertEquals(color, homeColor);
     }
     public LoginPage clickOnSignUpAndLoginButton()
     {

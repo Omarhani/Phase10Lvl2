@@ -13,20 +13,20 @@ public class LoginTests extends BaseTests {
 
     @Test
     public void loginUserWithCorrectEmailAndPassword() throws FileNotFoundException {
-        LoginPage loginPage =homePage.clickOnSignUpAndLoginButton();
+        homePage.verifyHomeLinkIsOrange(dataModel().HomeColor);
+
+        // Scenario 1: Valid email and password
+        LoginPage loginPage = homePage.clickOnSignUpAndLoginButton();
         loginPage.insertLoginEmail(dataModel().Login.ValidCreditials.Email);
         loginPage.insertLoginPassword(dataModel().Login.ValidCreditials.Password);
-        homePage=loginPage.clickOnLoginButtonAndSuccess();
+        homePage = loginPage.clickOnLoginButtonAndSuccess();
         homePage.verifyUserName(dataModel().UserName);
         homePage.clickOnLogOutButton();
 
-    }
-
-    @Test
-    public void loginUserWithCorrectEmailAndInCorrectPassword() throws FileNotFoundException {
-        LoginPage loginPage =homePage.clickOnSignUpAndLoginButton();
+        // Scenario 2: Valid email and incorrect password
+        homePage.clickOnSignUpAndLoginButton();
         loginPage.insertLoginEmail(dataModel().Login.InvalidCreditials.InvalidPassword.Email);
-        loginPage.insertLoginPassword(dataModel().Login.InvalidCreditials.InvalidPassword.Email);
+        loginPage.insertLoginPassword(dataModel().Login.InvalidCreditials.InvalidPassword.Password); // Fixed this line
         loginPage.clickOnLoginButtonAndFail();
         loginPage.verifyEmailOrPasswordIsIncorrectMSG(dataModel().EmailOrPasswordIsIncorrectMSG);
 

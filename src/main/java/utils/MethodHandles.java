@@ -31,7 +31,7 @@ public class MethodHandles {
         this.driver = driver;
     }
 
-    private WebElement webElement(By locator) {
+    protected WebElement webElement(By locator) {
         return driver.findElement(locator);
     }
 
