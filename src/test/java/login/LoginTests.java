@@ -18,13 +18,13 @@ public class LoginTests extends BaseTests {
         // Scenario 1: Valid email and password
         LoginPage loginPage = homePage.clickOnSignUpAndLoginButton();
         loginPage.insertLoginCreditial(dataModel().Login.ValidCreditials.Email,dataModel().Login.ValidCreditials.Password);
-        homePage = loginPage.clickOnLoginButtonAndSuccess();
+        homePage = loginPage.clickOnLoginButton();
         homePage.verifyUserName(dataModel().UserName);
         homePage.clickOnLogOutButton();
 
         // Scenario 2: Valid email and incorrect password
         loginPage.insertLoginCreditial(dataModel().Login.InvalidCreditials.InvalidPassword.Email,dataModel().Login.InvalidCreditials.InvalidPassword.Password);
-        loginPage.clickOnLoginButtonAndFail();
+        loginPage.clickOnLoginButton();
         loginPage.verifyEmailOrPasswordIsIncorrectMSG(dataModel().EmailOrPasswordIsIncorrectMSG);
 
 

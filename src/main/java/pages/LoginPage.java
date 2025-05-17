@@ -21,17 +21,13 @@ public class LoginPage extends MethodHandles {
         sendKeys(loginEmail, 10,mailText);
         sendKeys(password,10,passwordText);
     }
-    public HomePage clickOnLoginButtonAndSuccess()
+    public HomePage clickOnLoginButton()
     {
         click(loginButton,5);
         return new HomePage(driver);
     }
 
-    public void clickOnLoginButtonAndFail()
-    {
-        click(loginButton,5);
 
-    }
     private String getEmailOrPasswordIsIncorrectMSG()
     {
 
