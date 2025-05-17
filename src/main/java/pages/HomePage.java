@@ -11,6 +11,18 @@ public class HomePage extends MethodHandles {
     }
 
 
+    By TestCaseButton =By.xpath("//*[contains(text(),'Test Cases')]");
+    By TestCaseTitle = By.xpath("//*[contains(text(),'Below is the list of test Cases for you to practice the Automation. Click on the scenario for detailed Test Steps:')]");
+
+    public void assertTestCasesExists() {
+        myAssertEquals(getText(TestCaseButton, 2), "Test Cases");
+        click(TestCaseButton, 5);
+        myAssertEquals(getText(TestCaseTitle, 2), "Below is the list of test Cases for you to practice the Automation. Click on the scenario for detailed Test Steps:");
+    }
+
+
+
+
     //locators
     private final By signUpAndLogin = By.linkText("Signup / Login");
     private final By homeLink = By.xpath("//a[contains(., 'Home')]");
@@ -46,7 +58,7 @@ public class HomePage extends MethodHandles {
     }
 
 
-    
+
 
     public LoginPage clickOnSignUpLoginButton() {
 
