@@ -10,11 +10,44 @@ public class LoginPage extends MethodHandles {
         super(driver);
     }
 
+
+    //locators
+    private final By loginEmail = By.xpath("//input[@data-qa=\"login-email\"]");
+    private final By password = By.name("password");
+    private final By loginButton = By.xpath("//button[contains(text(),\"Login\")]");
+    private final By emailOrPasswordIsIncorrectMSG = By.xpath("//p[contains(text(),\"Your email or password is incorrect!\")]");
     private final By signUpText = By.xpath("(//div[@class='signup-form']/h2)");
     private final By name = By.xpath("//input[@name='name']");
     private final By email = By.xpath("(//input[@name='email'])[2]");
     private final By emailExistingText = By.xpath("//div[@class='signup-form']//p[text()='Email Address already exist!']");
     private final By signUpButton =By.xpath("(//button[@class='btn btn-default'])[2]");
+
+    //Methods
+    public void insertLoginCreditial(String mailText,String passwordText)
+    {
+        sendKeys(loginEmail, 10,mailText);
+        sendKeys(password,10,passwordText);
+    }
+    public HomePage clickOnLoginButton()
+    {
+        click(loginButton,5);
+        return new HomePage(driver);
+    }
+
+
+    private String getEmailOrPasswordIsIncorrectMSG()
+    {
+
+        return getText(emailOrPasswordIsIncorrectMSG , 5);
+    }
+    public void verifyEmailOrPasswordIsIncorrectMSG(String emailOrPasswordIsIncorrectMSG)
+    {
+        myAssertEquals(getEmailOrPasswordIsIncorrectMSG(),emailOrPasswordIsIncorrectMSG);
+    }
+
+
+
+    
 
     public String getSignUpText() {
         return driver.findElement(signUpText).getText();
@@ -37,3 +70,4 @@ public class LoginPage extends MethodHandles {
         }
 
     }
+

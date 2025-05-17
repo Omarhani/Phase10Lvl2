@@ -1,18 +1,23 @@
 {
-  "URL": "https://www.automationexercise.com/",
+
+  "URL": "https://automationexercise.com/",
+  "HomeColor": "rgba(255, 165, 0, 1)",
+  "UserName" : "Sara Ramadan",
+  "EmailOrPasswordIsIncorrectMSG" : "Your email or password is incorrect!",
+
   "Login":{
     "ValidCreditials": {
-      "Username": "",
-      "Password": ""
+      "Email": "sararamadan20005@gmail.com",
+      "Password": "Mo7@medramadan"
     },
     "InvalidCreditials": {
       "InvalidUsername": {
-        "Username": "",
+        "Email": "",
         "Password": ""
       },
       "InvalidPassword": {
-        "Username": "",
-        "Password": ""
+        "Email": "sararamadan20005@gmail.com",
+        "Password": "Mo7@medr123"
       }
     }
   }
