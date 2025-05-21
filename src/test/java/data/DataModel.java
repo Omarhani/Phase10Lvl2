@@ -7,4 +7,6 @@ public class DataModel {
     public Login Login;
 
     public Object[][] Login1;
+    public Signup Signup;
+    public SignupFullData SignupFullData;
 }

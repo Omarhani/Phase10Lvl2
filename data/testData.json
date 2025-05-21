@@ -1,5 +1,5 @@
 {
-  "URL": "",
+  "URL": "https://www.automationexercise.com/",
   "Login":{
     "ValidCreditials": {
       "Username": "",
@@ -15,5 +15,26 @@
         "Password": ""
       }
     }
+  },
+  "Signup": {
+    "SignupValidEmail": {
+      "Name":"zee",
+      "Email":"zee17@test.test"
+    }
+  },
+    "SignupFullData": {
+      "FirstName":"Zahraa",
+      "LastName":"ahmed",
+      "Company":"test",
+      "Address":"Cairo",
+      "Country": "Canada",
+      "State":"EG",
+      "City":"Cairo",
+      "ZipCode":"123456",
+      "MobileNumber":"010623458788",
+      "Password":"123456",
+      "Day":"19",
+      "Month":"4",
+      "Year":"2000"
+    }
   }
-}
