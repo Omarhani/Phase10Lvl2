@@ -1,5 +1,4 @@
 package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +8,9 @@ public class HomePage extends MethodHandles {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-
+ 
     //locators
+    private final By signupAndLoginLink=By.linkText("Signup / Login");
     private final By signUpAndLogin = By.linkText("Signup / Login");
     private final By homeLink = By.xpath("//a[contains(., 'Home')]");
     private final By loginUser  = By.tagName("b");
@@ -45,9 +44,10 @@ public class HomePage extends MethodHandles {
         myAssertEquals(getUserName(),userName);
     }
 
-
-    
-
+    public LoginSignUpPage clickOnSignupAndLogin() {
+        click(signupAndLoginLink,5);
+        return new LoginSignUpPage(driver);
+    }
     public LoginPage clickOnSignUpLoginButton() {
 
         click(signUpLogin, 30);
