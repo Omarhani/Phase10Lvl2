@@ -17,6 +17,7 @@ public class HomePage extends MethodHandles {
     private final By logOut = By.linkText("Logout");
     private final By signUpLogin = By.linkText("Signup / Login");
     private final By homePageAssertion = By.xpath("(//h2[@class='title text-center'])[1]");
+    private final By products = By.xpath("//a[contains(text(), \"Products\")]");
 
     //methods
     public void verifyHomeLinkIsOrange(String homeColor) {
@@ -57,6 +58,12 @@ public class HomePage extends MethodHandles {
     public String getHomePageMsg() {
         return driver.findElement(homePageAssertion).getText();
 
+    }
+
+    public ProductsPage clickOnProducts()
+    {
+        click(products,5);
+        return new ProductsPage(driver);
     }
 }
 
