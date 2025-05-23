@@ -15,6 +15,8 @@ public class CheckoutPage extends MethodHandles {
     private final By firstQuantity = By.xpath("(//td[contains(@class, 'cart_quantity')]/button)[1]");
     private final By secondQuantity = By.xpath("(//td[contains(@class, 'cart_quantity')]/button)[2]");
     private final By totalPrice = By.xpath("(//p[@class='cart_total_price'])[last()]");
+    private final By cartButton = By.xpath("//a[contains(text(), \" Cart\")]");
+
 
     //Methods
     public void verifyPriceForTwoProducts(String price1 ,String price2)
@@ -36,7 +38,8 @@ public class CheckoutPage extends MethodHandles {
     public CartPage verifyTotalPrice(String expectedTotalPrice) {
         String actualTotalPrice = getText(totalPrice,5);
         myAssertEquals(actualTotalPrice, expectedTotalPrice);
-        navigateBack();
+        smoothScrollToElement(cartButton);
+        click(cartButton,5);
         return new CartPage(driver);
     }
 

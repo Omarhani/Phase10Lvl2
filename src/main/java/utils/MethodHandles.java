@@ -397,6 +397,7 @@ public class MethodHandles {
         js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
         setSteps();
     }
+
     protected void navigateBack() {
         driver.navigate().back();
         setSteps();

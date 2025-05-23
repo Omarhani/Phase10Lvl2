@@ -27,9 +27,9 @@ public class ProductTests extends BaseTests {
         CartPage cartPage = productsPage.clickOnViewCartButton();
         cartPage.verifyTwoProductsExistingOnCart();
         CheckoutPage checkoutPage = cartPage.clickOnProceedToCheckoutButton();
-        checkoutPage.verifyQuantityForTwoProducts("1","1");
-        checkoutPage.verifyPriceForTwoProducts("Rs. 500","Rs. 400");
-        checkoutPage.verifyTotalPrice("Rs. 900");
+        checkoutPage.verifyQuantityForTwoProducts(dataModel().Quantities.FirstProductQuantity,dataModel().Quantities.SecondProductQuantity);
+        checkoutPage.verifyPriceForTwoProducts(dataModel().Prices.FirstProductPrice,dataModel().Prices.SecondProductPrice);
+        checkoutPage.verifyTotalPrice(dataModel().Prices.TotalPrice);
         cartPage.deleteTwoProducts();
 
 
