@@ -5,6 +5,8 @@
   "UserName" : "Sara Ramadan",
   "EmailOrPasswordIsIncorrectMSG" : "Your email or password is incorrect!",
 
+  "Quantity": "4",
+
   "Login":{
     "ValidCreditials": {
       "Email": "sararamadan20005@gmail.com",

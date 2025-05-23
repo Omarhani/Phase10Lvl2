@@ -1,5 +1,6 @@
 package data;
 
+
 public class DataModel {
 
     public String URL;
@@ -10,4 +11,6 @@ public class DataModel {
     public Login Login;
 
     public Object[][] Login1;
+
+    public String Quantity ;
 }

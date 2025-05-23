@@ -1,8 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utils.MethodHandles;
 
 public class HomePage extends MethodHandles {
@@ -18,6 +20,7 @@ public class HomePage extends MethodHandles {
     private final By logOut = By.linkText("Logout");
     private final By signUpLogin = By.linkText("Signup / Login");
     private final By homePageAssertion = By.xpath("(//h2[@class='title text-center'])[1]");
+    private final By viewProductButton =By.xpath("//a[@href='/product_details/1']");
 
     //methods
     public void verifyHomeLinkIsOrange(String homeColor) {
@@ -58,5 +61,19 @@ public class HomePage extends MethodHandles {
         return driver.findElement(homePageAssertion).getText();
 
     }
-}
+
+    public ProductDetailPage clickOnViewProductButton () {
+        Actions actions=new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        click(viewProductButton, 30);
+        return new ProductDetailPage(driver);
+
+
+    }
+
+   // public void scrollDown (){
+        //Actions actions=new Actions(driver);
+        //actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+//}
 
