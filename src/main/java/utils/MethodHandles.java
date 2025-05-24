@@ -384,4 +384,15 @@ public class MethodHandles {
         js.executeScript("arguments[0].style.border = '5px solid red';", element);
     }
 
+
+    public void scrollToElement(By locator) {
+        explicitWait(5, locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", webElement(locator));
+        setSteps();
+        addBorderToElement(driver, webElement(locator));
+    }
+
+
+
+
 }
