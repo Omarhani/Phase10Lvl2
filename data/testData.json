@@ -16,6 +16,17 @@
     "SecondProductQuantity" : "1"
   },
 
+  "Quantity": {
+    "TheFirstProductQuantity": "4"
+  },
+
+"ExpectedResults" : {
+  "ShoppingCartAssertion" : "Shopping Cart",
+  "ProductDetailAssertion" : "CATEGORY",
+  "HomePageAssertion" : "FEATURES ITEMS"
+
+  },
+
   "Login":{
     "ValidCreditials": {
       "Email": "sararamadan20005@gmail.com",

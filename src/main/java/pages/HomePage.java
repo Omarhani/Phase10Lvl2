@@ -1,7 +1,9 @@
 package pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utils.MethodHandles;
 
 public class HomePage extends MethodHandles {
@@ -17,6 +19,7 @@ public class HomePage extends MethodHandles {
     private final By logOut = By.linkText("Logout");
     private final By signUpLogin = By.linkText("Signup / Login");
     private final By homePageAssertion = By.xpath("(//h2[@class='title text-center'])[1]");
+    private final By viewProductButton =By.xpath("//a[@href='/product_details/1']");
 
     private final By contactUsLink=By.linkText("Contact us");
 
@@ -49,10 +52,12 @@ public class HomePage extends MethodHandles {
         myAssertEquals(getUserName(),userName);
     }
 
+
     public LoginSignUpPage clickOnSignupAndLogin() {
         click(signupAndLoginLink,5);
         return new LoginSignUpPage(driver);
     }
+
     public LoginPage clickOnSignUpLoginButton() {
 
         click(signUpLogin, 30);
@@ -60,9 +65,24 @@ public class HomePage extends MethodHandles {
     }
 
     public String getHomePageMsg() {
-        return driver.findElement(homePageAssertion).getText();
+        return getText(homePageAssertion,5);
 
     }
+
+    public ProductDetailPage clickOnViewProductButton () {
+        Actions actions=new Actions(driver);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        click(viewProductButton, 30);
+        return new ProductDetailPage(driver);
+
+
+    }
+
+   // public void scrollDown (){
+        //Actions actions=new Actions(driver);
+        //actions.sendKeys(Keys.PAGE_DOWN).perform();
+    }
+
     public ContactUsPage clickContactUsLink(){
         click(contactUsLink,7);
         return new ContactUsPage(driver);
