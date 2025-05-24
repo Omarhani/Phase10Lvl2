@@ -1,5 +1,4 @@
 package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +10,9 @@ public class HomePage extends MethodHandles {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-
+ 
     //locators
+    private final By signupAndLoginLink=By.linkText("Signup / Login");
     private final By signUpAndLogin = By.linkText("Signup / Login");
     private final By homeLink = By.xpath("//a[contains(., 'Home')]");
     private final By loginUser  = By.tagName("b");
@@ -21,6 +20,11 @@ public class HomePage extends MethodHandles {
     private final By signUpLogin = By.linkText("Signup / Login");
     private final By homePageAssertion = By.xpath("(//h2[@class='title text-center'])[1]");
     private final By viewProductButton =By.xpath("//a[@href='/product_details/1']");
+
+    private final By contactUsLink=By.linkText("Contact us");
+
+    private final By products = By.xpath("//a[contains(text(), \"Products\")]");
+
 
     //methods
     public void verifyHomeLinkIsOrange(String homeColor) {
@@ -49,6 +53,11 @@ public class HomePage extends MethodHandles {
     }
 
 
+    public LoginSignUpPage clickOnSignupAndLogin() {
+        click(signupAndLoginLink,5);
+        return new LoginSignUpPage(driver);
+    }
+
     public LoginPage clickOnSignUpLoginButton() {
 
         click(signUpLogin, 30);
@@ -73,5 +82,17 @@ public class HomePage extends MethodHandles {
         //Actions actions=new Actions(driver);
         //actions.sendKeys(Keys.PAGE_DOWN).perform();
     }
-//}
+
+    public ContactUsPage clickContactUsLink(){
+        click(contactUsLink,7);
+        return new ContactUsPage(driver);
+
+
+    public ProductsPage clickOnProducts()
+    {
+        click(products,5);
+        return new ProductsPage(driver);
+
+    }
+}
 
