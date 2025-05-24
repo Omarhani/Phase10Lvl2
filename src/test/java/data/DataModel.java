@@ -14,4 +14,5 @@ public class DataModel {
     public Object[][] Login1;
     public Signup Signup;
     public SignupFullData SignupFullData;
+    public Contactus Contactus;
 }
