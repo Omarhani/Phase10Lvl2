@@ -8,6 +8,8 @@ public class DataModel {
     public String EmailOrPasswordIsIncorrectMSG;
 
     public Login Login;
+    public Prices Prices;
+    public Quantities Quantities;
 
     public Object[][] Login1;
     public Signup Signup;
