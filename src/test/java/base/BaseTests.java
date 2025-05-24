@@ -43,24 +43,11 @@ public class BaseTests {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("headlessChrome")) {
             chromeOptions = new ChromeOptions();
-//            chromeOptions.addArguments("--headless");             // Run Chrome in headless mode (no UI)
-            chromeOptions.addArguments("--disable-gpu");          // Recommended for headless mode
-            chromeOptions.addArguments("--no-sandbox");           // Required for running as root in some CI environments
-            chromeOptions.addArguments("--disable-dev-shm-usage"); // Overcomes resource limitations in /dev/shm in some environments
-            chromeOptions.addArguments("--window-size=1920,1080"); // Set a consistent window size
-            chromeOptions.addArguments("--remote-debugging-port=9222"); // Can be useful for debugging, though not strictly necessary for running
-            chromeOptions.addArguments("--disable-extensions");   // Disable browser extensions
-            chromeOptions.addArguments("--disable-setuid-sandbox"); // Another sandbox-related argument for CI
-            chromeOptions.addArguments("--verbose");              // Enable verbose logging from Chrome
-            chromeOptions.addArguments("--log-path=chromedriver.log"); // Log chromedriver output
-
+            chromeOptions.addArguments("--headless");             // Run Chrome in headless mode (no UI)
             driver = new ChromeDriver(chromeOptions);
-        } else if (browser.equalsIgnoreCase("headlessfirefox")) {
+        } else if (browser.equalsIgnoreCase("headlessFirefox")) {
             firefoxOptions = new FirefoxOptions();
-            firefoxOptions.addArguments("--no-sandbox"); // Required for running as root in some CI environments
-            firefoxOptions.addArguments("--disable-dev-shm-usage"); // Overcomes resource limitations in some environments
-
-//            firefoxOptions.addArguments("--headless");
+            firefoxOptions.addArguments("--headless");
             driver = new FirefoxDriver(firefoxOptions);
         }
     }
