@@ -49,4 +49,14 @@ sendKeys(contactUsUploadFile,5,filePath);
     public String getContactUsSuccessMessage(){
     return getText(contactUsSuccessMessage,7);
     }
+    public void ContactUs(String name,String email,String subject,String message,String filePath){
+    insertContactUsName(name);
+    insertContactUsEmail(email);
+    insertContactUsSubject(subject);
+    insertContactUsMessage(message);
+    uploadFile(filePath);
+    clickOnSubmitButton();
+    acceptContactUsAlert();
+
+    }
 }
