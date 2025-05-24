@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Smoke">
     <test name="Chrome">
-        <parameter name="browser" value="headlessFirefox"/>
+        <parameter name="browser" value="headlessChrome"/>
         <classes>
             <class name="login.LoginTests"></class>
         </classes>
