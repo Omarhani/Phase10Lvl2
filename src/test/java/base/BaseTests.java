@@ -43,6 +43,9 @@ public class BaseTests {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("headlessChrome")) {
             chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--no-sandbox"); // Required for running as root in some CI environments
+            chromeOptions.addArguments("--disable-dev-shm-usage"); // Overcomes resource limitations in some environments
+
             chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
         } else if (browser.equalsIgnoreCase("headlessfirefox")) {
