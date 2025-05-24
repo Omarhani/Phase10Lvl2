@@ -19,11 +19,7 @@ public class ProductTests extends BaseTests {
         loginPage.insertLoginCreditial(dataModel().Login.ValidCreditials.Email,dataModel().Login.ValidCreditials.Password);
         homePage = loginPage.clickOnLoginButton();
         ProductsPage productsPage = homePage.clickOnProducts();
-        productsPage.hoverForFirstProduct();
-        productsPage.clickOnAddToCartFirstProduct();
-        productsPage.clickOnContinueShoppingButton();
-        productsPage.hoverForSecondProduct();
-        productsPage.clickOnAddToCartSecondProduct();
+        productsPage.addTwoProductsToCart();
         CartPage cartPage = productsPage.clickOnViewCartButton();
         cartPage.verifyTwoProductsExistingOnCart();
         CheckoutPage checkoutPage = cartPage.clickOnProceedToCheckoutButton();

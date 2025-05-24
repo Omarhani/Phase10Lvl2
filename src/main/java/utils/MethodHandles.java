@@ -21,7 +21,7 @@ public class MethodHandles {
 
     static ExtentTest test;
 
-    protected static WebDriver driver;
+    protected WebDriver driver;
     Select select;
 
     Actions actions;
@@ -392,9 +392,8 @@ public class MethodHandles {
         js.executeScript("arguments[0].style.border = '5px solid red';", element);
     }
     protected void smoothScrollToElement(By locator) {
-        WebElement element = webElement(locator);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element);
+        js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",  webElement(locator));
         setSteps();
     }
 

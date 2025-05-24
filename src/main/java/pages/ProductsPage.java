@@ -19,26 +19,33 @@ public class ProductsPage extends MethodHandles {
     private final By viewCartButton = By.xpath("//a[u[text()=\"View Cart\"]]");
 
     //methods
-    public void hoverForFirstProduct()
+   private void hoverForFirstProduct()
     {
         smoothScrollToElement(firstProduct);
         click(firstProduct,5);
     }
-    public void hoverForSecondProduct()
+    private void hoverForSecondProduct()
     {
         click(secondProduct,5);
     }
-    public void clickOnAddToCartFirstProduct()
+    private void clickOnAddToCartFirstProduct()
     {
         click(addToCartFirstProduct,5);
     }
-    public void clickOnAddToCartSecondProduct()
+    private void clickOnAddToCartSecondProduct()
     {
         click(addToCartSecondProduct,5);
     }
-    public void clickOnContinueShoppingButton()
+    private void clickOnContinueShoppingButton()
     {
         click(continueShoppingButton,5);
+    }
+    public void addTwoProductsToCart() {
+        hoverForFirstProduct();
+        clickOnAddToCartFirstProduct();
+        clickOnContinueShoppingButton();
+        hoverForSecondProduct();
+        clickOnAddToCartSecondProduct();
     }
     public CartPage clickOnViewCartButton()
     {
