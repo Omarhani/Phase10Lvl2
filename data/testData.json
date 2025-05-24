@@ -5,7 +5,16 @@
   "UserName" : "Sara Ramadan",
   "EmailOrPasswordIsIncorrectMSG" : "Your email or password is incorrect!",
 
-  "Quantity": "4",
+  "Quantity": {
+    "TheFirstProductQuantity": "4"
+  },
+
+"ExpectedResults" : {
+  "ShoppingCartAssertion" : "Shopping Cart",
+  "ProductDetailAssertion" : "CATEGORY",
+  "HomePageAssertion" : "FEATURES ITEMS"
+
+  },
 
   "Login":{
     "ValidCreditials": {

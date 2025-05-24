@@ -23,9 +23,14 @@ public class ProductDetailPage extends MethodHandles {
         return getText(assertOnProductDetail, 30);
     }
 
-    public void increaseQuantityTO4() {
+    //public void increaseQuantityTO4() {
+        //clear(quantityTextBox, 30);
+        //sendKeys(quantityTextBox, 30, "4");
+    //}
+
+    public void increaseQuantityT2O4(String quantity) {
         clear(quantityTextBox, 30);
-        sendKeys(quantityTextBox, 30, "4");
+        sendKeys(quantityTextBox, 30,quantity);
     }
 
     public void clickOnAddCart() {
@@ -35,6 +40,7 @@ public class ProductDetailPage extends MethodHandles {
     public ShoppingCartPage clickOnViewCartLink() {
         click(viewCartLink, 30);
         return new ShoppingCartPage(driver);
+
     }
 
 

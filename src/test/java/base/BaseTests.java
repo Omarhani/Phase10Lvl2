@@ -69,9 +69,9 @@ public class BaseTests {
     }
 
     @AfterClass
-    //public void tearDown() {
-        //driver.quit();
-   // }
+    public void tearDown() {
+        driver.quit();
+    }
 
     @BeforeSuite
     public void beforeSuite(){

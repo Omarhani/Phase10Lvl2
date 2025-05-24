@@ -49,8 +49,6 @@ public class HomePage extends MethodHandles {
     }
 
 
-    
-
     public LoginPage clickOnSignUpLoginButton() {
 
         click(signUpLogin, 30);
@@ -58,7 +56,7 @@ public class HomePage extends MethodHandles {
     }
 
     public String getHomePageMsg() {
-        return driver.findElement(homePageAssertion).getText();
+        return getText(homePageAssertion,5);
 
     }
 

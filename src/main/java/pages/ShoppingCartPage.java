@@ -14,4 +14,5 @@ public class ShoppingCartPage extends MethodHandles {
     public String shoppingCartValidationMsg() {
        return getText(shoppingCartPageAssertion, 30);
     }
-}
+
+    }

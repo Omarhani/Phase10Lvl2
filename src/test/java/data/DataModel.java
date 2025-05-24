@@ -12,5 +12,6 @@ public class DataModel {
 
     public Object[][] Login1;
 
-    public String Quantity ;
-}
+    public Quantity Quantity ;
+    public ExpectedResults ExpectedResults;
+   }
