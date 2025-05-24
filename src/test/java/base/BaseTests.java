@@ -43,7 +43,7 @@ public class BaseTests {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("headlessChrome")) {
             chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--headless");             // Run Chrome in headless mode (no UI)
+//            chromeOptions.addArguments("--headless");             // Run Chrome in headless mode (no UI)
             chromeOptions.addArguments("--disable-gpu");          // Recommended for headless mode
             chromeOptions.addArguments("--no-sandbox");           // Required for running as root in some CI environments
             chromeOptions.addArguments("--disable-dev-shm-usage"); // Overcomes resource limitations in /dev/shm in some environments
